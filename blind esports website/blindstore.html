@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="blind.css">
+     <link rel="stylesheet" href="https://www.freepik.com/free-vector/mountains-cleft-view-from-bottom-night-scenery-landscape-with-high-rocks-full-moon-with-stars-glowing-peaks_13194970.htm#page=1&query=Scene&position=38">
+     <!--Boxicons CDN Link--> 
+     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<body>
+    <div id="preloader" ></div>
+    <header id="blur">
+        <div class="logo">
+            <a href="index.html"><div class="logo_det"><img src="images/1.jpg" alt=""></div></a></div>
+        <ul>
+            <li><a href="index.html">Home</a>
+                <nav class="dropdown">
+                    <li><a href=""></a>Login/register</li>
+                    <li><a href=""></a>Contact us</li>
+                    
+                </nav>
+            </li>
+            <li><a href="Blindstore.html">Blind store</a>
+               
+            
+        
+            </li>
+            <li><a href="#" onclick="toggle()"><i class='bx bx-search'></i></a></li>
+                
+        </ul>
+        
+        
+    </header>
+    <div class="searchcom" id="popup">
+        <table class="elements">
+            <tr>
+                <td>
+                    <input type="text" placeholder="search....." class="search"> 
+                </td>
+                <td>
+                   <a href=""><i class='bx bx-search'></i></a>
+                </td>
+                <td>
+                <a href="#" onclick="toggle()"><i class='bx bx-x'></i></a> 
+               </td>
+            </tr>
+        </table> 
+       </div>
+    <section>
+        <img src="images/stars.png" id="stars" alt="">
+        <img src="images/moon.png" id="moon" alt="">
+        <img src="images/mountains_behind.png" id="mountains_behind" alt="">
+                                        
+        <img src="images/mountains_front.png" id="mountains_front" alt="">
+
+    </section>
+    <div class="wrapper" >
+       <nav >
+        <div class="items" >
+            <span class="items"><img src="images/n1.svg" alt="" style="width: 100%;"  > headphones<nav class="drop">
+                <li><a href="hyperx.html">Hyperx</a></li>
+                <li><a href=""></a>Sony</li>
+                
+            </nav>  </span>
+            <span class="items"><img src="images/n2.svg" alt="" style="width: 100%;" >Keyboards <nav class="drop">
+                <li><a href=""></a>Asus</li>
+                <li><a href=""></a>Logitech</li>
+                
+            </nav></span>
+            <span class="items"><img src="images/n3.svg" alt=""  style="width: 100%;">Mouse <nav class="drop">
+                <li><a href=""></a>Logitec</li>
+                <li><a href=""></a>Asus</li>
+                
+            </nav></span>
+            <span class="items"><img src="images/n4.svg" alt="" style="width: 100%;"> Apparel <nav class="drop">
+                <li><a href=""></a>Kaztro gaming</li>
+                <li><a href=""></a>Eagle gaming</li>
+                <li><a href=""></a>Blind Psycho</li>
+                
+            </nav></span>
+        </div>
+    </nav>
+</div>
+<div class="image-gallery">
+    <img src="images/q3.jfif" alt="">
+    <div class="text-wrapper">
+    <h4>New Hyperx Headphone</h4>
+    <button><a href="hyperx.html"> Shop now</button></a>
+</div>
+</div>
+<div class="image-gallery1">
+    <img src="images/q1.png" alt="">
+    <div class="text-wrapper1">
+    <h4>New Logitech Keyboard</h4>
+    <button>Shop now</button>
+</div>
+</div>
+<div class="image-gallery2">
+    <img src="images/q4.jfif" alt="">
+    <div class="text-wrapper2">
+    <h4>New Asus rog Mouse</h4>
+    <button>Shop now</button>
+</div>
+</div>
+ <footer>
+    <div class="icons"><a href="https://www.instagram.com/blindesportsorg/?hl=en"> <i class='bx bxl-instagram' ></i></a>
+        <a href="https://www.youtube.com/channel/UC-axls2erZt5gjFgGnZloGQ"><i class='bx bxl-youtube' ></i></a>
+ </footer>
+    <a class="gotopbtn"  href="#" ><i class='bx bxs-up-arrow-alt'></i></a>
+
+    <script type="text/javascript">
+        function toggle(){
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active')                    
+            var popup = document.getElementById('popup');
+            popup.classList.toggle('active')
+        }
+    </script>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');       
+        let mountains_front = document.getElementById('"mountains_front');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            header.style.top = value * 0.5 + 'px';
+            
+            
+        })
+    </script>
+        <script>
+            var loader=document.getElementById("preloader");
+
+            window.addEventListener("load",function(){
+                loader.style.display="none";
+
+            })
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,721 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+/* =Variables
+----------------------------------------------------------------------------- */
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#2b1055,#7597de);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+    
+}
+header{
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100;
+    
+   
+  
+    
+    
+}
+header#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+
+}
+header.sticky{
+    padding: 5px 100px;
+    background:transparent;
+    height: 100px;
+    display: flex;
+
+}
+
+header .logo .logo_det img{
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    
+   
+    height: 60px;
+    width: 60px;
+    
+    object-fit: cover;
+    border-radius: 50px;
+    cursor: pointer;}
+    header ul{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1px;
+        font-size: 0;
+       
+    }
+    header ul li{
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        list-style: none;
+        padding-right: 120px;
+         
+        
+        
+    }
+    header ul li:hover{
+        background: none;
+    }
+    nav.dropdown{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: none;
+        align-items: center;
+       
+        
+       
+    }
+    .dropdown li{
+        background:rgb(13, 15, 41);
+        color: none;
+        height: 50px;
+        width: 200px;
+        font-size: 20px;
+        color: white;
+        display: none;
+        font-weight: normal;
+       
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        cursor: pointer;
+        white-space: nowrap;
+        
+        
+    }
+    .dropdown li::after{
+        content: "";
+    position: absolute;
+    background-color: red;
+    height: 3px;
+    width: 0;
+    right: 0px;
+   
+    transition: 0.5s;
+    }
+    
+    .dropdown li:hover{
+        background: white;
+        color: black;
+        font-size:10 px;
+        display: inline;
+        cursor: pointer;
+        border: none;
+        transition: 0.5s;
+        transform: scale(1.1);
+    }
+    .dropdown li:hover:after{
+        width: 100%;
+    }
+    
+     header ul li:hover > nav.dropdown{
+        perspective: 1000px;
+    }
+    header ul li:hover > nav.dropdown li{
+        transform-origin: top center;
+        opacity: 0;
+        display: block;
+    }
+    header ul li:hover > nav.dropdown li:nth-last-child(1){
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: -150ms;
+    }
+    header ul li:hover > nav.dropdown li:nth-last-child(2){
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 0ms;
+    }
+    header ul li:hover > nav.dropdown li:nth-last-child(3){
+        animation: animate 300ms ease-in-out forwards;
+        animation-delay: 150ms;
+    }
+    @keyframes animate{
+        0%{
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        70%{
+           
+            transform: translateX(-20px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 400px;
+    transition: 0.6s;
+    font-size: 20px;
+    float: right;
+   
+
+  
+ 
+   
+   
+   
+}
+ a:after{
+    content: "";
+    position: absolute;
+    background-color: red;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+a:hover{
+    color: #ffffff;
+}
+a:hover::after{
+    width: 100%;
+    
+}
+header.sticky .logo .logo_det img{
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    
+   
+    height: 60px;
+    width: 60px;
+    
+    object-fit: cover;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+header.sticky ul li a{
+    color:white;
+}
+.searchcom{
+    margin: auto;
+    margin-top: 0%;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    border: 4px solid #2B2B2B;
+    z-index: 100000;
+    
+    
+
+}
+.elements{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    
+    
+   
+}
+.search{
+     border: none;
+    height: 30%;
+    width: 100%;
+    padding: 0px 5px;
+    color: white;
+    font-family: sans-serif;
+    background: none;
+    font-size: 50px;
+    border: none;
+    z-index: 1000000;
+}
+.search:focus{
+    outline: none;
+    
+    
+}
+.searchcom i{
+    font-size: 50px;
+   position: relative;
+   color: white;
+   bottom: 15px;
+   left: 200px;
+   margin: 0;
+   padding: 0;
+   gap: 50px;
+   cursor: pointer;
+   letter-spacing: 100px;
+}
+
+
+#popup{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+   
+    background: none;
+    border: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    
+}
+#popup.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+section{
+    position: relative;
+    width:100%;
+    height: 100vh;
+    padding:  100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522,transparent);
+    z-index: 1000;
+}
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#moon{
+      mix-blend-mode: screen;
+}
+section img#mountains_front{
+    z-index: 10;
+}
+ 
+.wrapper{
+   background:#1c0522;
+   padding: 20px 0px 20px 0px;
+   height: 100%;
+   display: flex;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+
+}
+nav .items .items{
+     margin: 0;
+     padding: 0;
+    
+
+    display: inline-block;
+    align-items: center;
+    text-align: center ;
+    font-size: 20px;
+   
+    
+}
+span{
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    color:white;
+}
+nav .items .items img{
+    
+   display: block;
+   color: black;
+   bottom: 50px;
+}
+nav.dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+  right: auto ;
+  text-align: center ;
+  transform: translate(-50%, 0) ;
+     transition: 0.5s;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+   
+   
+    
+   
+}
+.drop li{
+    background:rgb(13, 15, 41);
+    color: none;
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    display: none;
+    font-weight: normal;
+   
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    
+    
+}
+.drop li::after{
+    content: "";
+position: absolute;
+background-color:red;
+height: 3px;
+width: 0;
+right: 0px;
+
+transition: 0.5s;
+}
+
+.drop li:hover{
+    background: white;
+    color: black;
+    font-size:10 px;
+    display: inline;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+.drop li:hover:after{
+    width: 100%;
+}
+.drop li a{
+    color:black;
+    text-decoration: none;
+   
+}
+.drop li a:after{
+    content: "";
+    position: absolute;
+    background-color:red;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.drop li a:hover{
+    color: black;
+    background: white;
+}
+.drop li  a:hover::after{
+    width: 100%;
+    
+}
+
+
+nav .items .items > nav.drop{
+    perspective: 1000px;
+}
+nav .items .items:hover > nav.drop li{
+    transform-origin: top center;
+    opacity: 0;
+    display: block;
+}
+nav .items .items:hover > nav.drop li:nth-last-child(1){
+    animation: animate 300ms ease-in-out forwards;
+    animation-delay: -150ms;
+}
+nav .items .items:hover > nav.drop li:nth-last-child(2){
+    animation: animate 300ms ease-in-out forwards;
+    animation-delay: 0ms;
+}
+nav .items .items:hover > nav.drop li:nth-last-child(3){
+    animation: animate 300ms ease-in-out forwards;
+    animation-delay: 150ms;
+}
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    70%{
+       
+        transform: translateX(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.image-gallery{
+    background:#1c0522;
+  display: flex;
+   height: 100%;
+   top: 100px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  
+
+}
+.image-gallery  img{
+   display: flex;
+    position: absolute;
+    
+}
+.text-wrapper{
+    top: -260px;
+    left: 290px;
+    position: relative;
+    width: 100%;
+    
+    justify-content: center;
+}
+.text-wrapper h4{
+    font-size: 45px;
+    top: 10px;
+    color: black;
+   bottom: 100px;
+
+}
+button{
+   
+    border: 0;
+    background: white;
+    color: black;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    bottom: -150px;
+    
+}
+button a{
+    text-decoration: none;
+}
+button a:after{
+    text-decoration: none;
+    background: none;
+}
+button a:hover{
+    text-decoration: none;
+    background: none;
+}
+button:hover{
+    background: red;
+    
+}
+.image-gallery1{
+    background:#1c0522;
+  display: flex;
+   height: 100%;
+   top: 100px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  
+
+}
+.image-gallery1  img{
+   display: flex;
+    position: absolute;
+    width: 65%;
+    
+}
+.text-wrapper1{
+    top: -200px;
+    left: 290px;
+    position: relative;
+    width: 100%;
+    font-size: 45px;
+    justify-content: center;
+}
+.text-wrapper1 h4{
+    font-size: 45px;
+    top: 10px;
+    color: white;
+   bottom: 100px;
+
+}
+button{
+   
+    border: 0;
+    background: white;
+    color: black;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    bottom: -150px;
+    
+}
+button:hover{
+    background: red;
+    
+}
+.image-gallery2{
+    background:#1c0522;
+  display: flex;
+   height: 100%;
+   top: 100px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  
+
+}
+.image-gallery2 img{
+   display: flex;
+    position: absolute;
+   
+    
+}
+.text-wrapper2{
+    top: -260px;
+    left: 290px;
+    position: relative;
+    width: 100%;
+    
+    justify-content: center;
+}
+.text-wrapper2 h4{
+    font-size: 45px;
+    top: 10px;
+    color: white;
+   bottom: 100px;
+   font-weight: bold;
+}
+button{
+   
+    border: 0;
+    background: white;
+    color: black;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    bottom: -150px;
+    
+}
+button:hover{
+    background: red;
+    
+}
+footer{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-image: url(images/header.jpg);
+}
+.icons{
+    width: 100%;
+    text-align: center;
+}
+.icons  a {
+    margin: 0 auto;
+    padding: 1em;
+    color:white;
+    display: inline-block;
+    text-decoration: none;
+    
+
+    font-size: 20px;
+  
+   
+    
+}
+.icons  a:hover{
+    color: red;
+} 
+.icons i{
+    text-align: center;
+   
+}
+
+.gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: red;
+    bottom: 40px;
+    right:50px;
+
+    text-decoration: none;
+    text-align: center; line-height: 50px;
+    color: white;
+    font-size: 22px;
+    opacity: 1;
+    transition: all 0.5s;
+    z-index: 100;
+    
+}
+.gotopbtn:hover{
+    background: white;
+    color: black;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    
+}
+::-webkit-scrollbar-thumb{
+    background:red;
+    border: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #2B2B2B;
+}
+#preloader{
+    background: #000 url(images/p2.gif) no-repeat center;
+    display: flex;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100000000;
+}
