@@ -723,6 +723,7 @@ hr.center-star {
 
 .navigation-auto{
     position: absolute;
+    background:none;
     display: flex;
     width: 80%;
     justify-content: center;
