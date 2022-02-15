@@ -733,7 +733,7 @@ hr.center-star {
 }
 
 .navigation-auto div{
-    border: 2px solid  white;
+    border: 2px solid  ;
     padding: 15px 0px 0px 0px;
     border-radius: 10px;
     transition: 0.5s;
@@ -744,16 +744,16 @@ hr.center-star {
     margin-right: 40px;
 }
 #radio1:checked ~ .navigation-auto .auto-btn1{
-    background: white;
+    background: none;
 }
 #radio2:checked ~ .navigation-auto .auto-btn2{
-    background: white;
+    background: none;
 }
 #radio3:checked ~ .navigation-auto .auto-btn3{
-    background: white;
+    background: none;
 }
 #radio4:checked ~ .navigation-auto .auto-btn4{
-    background: white;
+    background: none;
 }
 h5{
    
